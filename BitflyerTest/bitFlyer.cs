@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using BitflyerTest;
+
 
 
 namespace HttpClientSample
@@ -32,9 +36,26 @@ namespace HttpClientSample
                 client.BaseAddress = endpointUri;
                 var message = await client.SendAsync(request);
                 var response = await message.Content.ReadAsStringAsync();
+                JObject s = JObject.Parse(response);
+                string product_code = (string)s["product_code"];
+                decimal bid = (decimal)s["best_bid"];
+                Console.WriteLine(bid);
+                System.Diagnostics.Debug.WriteLine(bid);
 
-                Console.WriteLine(response);
-                System.Diagnostics.Debug.WriteLine(response);
+                using (var context = new bitCoinTestEntities())
+                {
+                    var datum = new BITCON_DATA()
+                    {
+                        QUERY_TIME = DateTime.Now,
+                        CUMPANY_ID = "001",
+                        BID = (decimal)s["best_bid"],
+                        ASK = (decimal)s["best_ask"],
+
+                    };
+                    context.BITCON_DATA.Add(datum);
+                    context.SaveChanges();
+                }
+
             }
         }
 
