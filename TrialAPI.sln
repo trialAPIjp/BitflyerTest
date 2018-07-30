@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitflyerTest", "BitflyerTest\BitflyerTest.csproj", "{2F20D572-86A5-4B1A-9602-657333A378E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitCoinValueCheck", "BitflyerTest\BitCoinValueCheck.csproj", "{2F20D572-86A5-4B1A-9602-657333A378E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightStreamSample2", "LightStreamSample\LightStreamSample2.csproj", "{698F3CC3-7E24-4A0D-9E09-CC13C62DE11B}"
 EndProject

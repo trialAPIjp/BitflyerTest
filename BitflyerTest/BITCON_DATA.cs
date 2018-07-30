@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BitflyerTest
+namespace BitCoinValueCheck
 {
     using System;
     using System.Collections.Generic;
